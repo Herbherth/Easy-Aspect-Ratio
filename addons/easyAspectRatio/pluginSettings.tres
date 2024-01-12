@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AspectRatioSaving" load_steps=11 format=3 uid="uid://dbvliuuhnehj8"]
+
+[ext_resource type="Script" path="res://addons/easyAspectRatio/AspectRatioSettings.gd" id="1_fx7fp"]
+[ext_resource type="Resource" uid="uid://ciim55wavr3va" path="res://addons/easyAspectRatio/aspectRatios/4x5.tres" id="1_m1g3n"]
+[ext_resource type="Resource" uid="uid://8rp0a1hhsfl6" path="res://addons/easyAspectRatio/aspectRatios/16x9.tres" id="2_wm47n"]
+[ext_resource type="Resource" uid="uid://chx8mr08mi2yv" path="res://addons/easyAspectRatio/aspectRatios/16x10.tres" id="3_lebv0"]
+[ext_resource type="Resource" uid="uid://dcnrh3qlkli4q" path="res://addons/easyAspectRatio/aspectRatios/21x9.tres" id="4_u8naa"]
+[ext_resource type="Resource" uid="uid://c7vkaccgpam8h" path="res://addons/easyAspectRatio/aspectRatios/9x18.tres" id="5_wylk2"]
+[ext_resource type="Resource" uid="uid://43cf3w6ptkvo" path="res://addons/easyAspectRatio/aspectRatios/9x19.tres" id="6_5vqfy"]
+[ext_resource type="Resource" uid="uid://4syuqp7r0lae" path="res://addons/easyAspectRatio/aspectRatios/9x19.5.tres" id="7_xyktl"]
+[ext_resource type="Resource" uid="uid://dtr2dprll5lue" path="res://addons/easyAspectRatio/aspectRatios/9x20.tres" id="8_minic"]
+[ext_resource type="Resource" uid="uid://b7g776cfct1k0" path="res://addons/easyAspectRatio/aspectRatios/9x21.tres" id="9_68gx1"]
+
+[resource]
+script = ExtResource("1_fx7fp")
+aspect_options = Array[Resource("res://addons/easyAspectRatio/aspectRatios/AspectRatioModel.gd")]([ExtResource("1_m1g3n"), ExtResource("2_wm47n"), ExtResource("3_lebv0"), ExtResource("4_u8naa"), ExtResource("5_wylk2"), ExtResource("6_5vqfy"), ExtResource("7_xyktl"), ExtResource("8_minic"), ExtResource("9_68gx1")])
+aspect_selected = 1
+screensize = Vector2i(1200, 675)

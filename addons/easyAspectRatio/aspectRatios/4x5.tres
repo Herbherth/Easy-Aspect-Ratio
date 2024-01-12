@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AspectRatioModel" load_steps=2 format=3 uid="uid://ciim55wavr3va"]
+
+[ext_resource type="Script" path="res://addons/easyAspectRatio/aspectRatios/AspectRatioModel.gd" id="1_r6dvg"]
+
+[resource]
+script = ExtResource("1_r6dvg")
+name = "4:3"
+ratio_width = 4.0
+ratio_height = 3.0
+min_height = 400
+max_height = 2000

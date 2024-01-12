@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AspectRatioModel" load_steps=2 format=3 uid="uid://chx8mr08mi2yv"]
+
+[ext_resource type="Script" path="res://addons/easyAspectRatio/aspectRatios/AspectRatioModel.gd" id="1_bmfx1"]
+
+[resource]
+script = ExtResource("1_bmfx1")
+name = "16:10"
+ratio_width = 16.0
+ratio_height = 10.0
+min_height = 400
+max_height = 2000

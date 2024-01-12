@@ -1,0 +1,204 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1xrihchnryp3"]
+
+[ext_resource type="Script" path="res://addons/easyAspectRatio/WindowOptions.gd" id="1_d8xuk"]
+[ext_resource type="Resource" uid="uid://ciim55wavr3va" path="res://addons/easyAspectRatio/aspectRatios/4x5.tres" id="2_1iyg7"]
+[ext_resource type="Resource" uid="uid://8rp0a1hhsfl6" path="res://addons/easyAspectRatio/aspectRatios/16x9.tres" id="3_hpq46"]
+[ext_resource type="Resource" uid="uid://chx8mr08mi2yv" path="res://addons/easyAspectRatio/aspectRatios/16x10.tres" id="4_vo0vw"]
+[ext_resource type="Resource" uid="uid://dcnrh3qlkli4q" path="res://addons/easyAspectRatio/aspectRatios/21x9.tres" id="5_n0kb4"]
+
+[sub_resource type="Theme" id="Theme_uypgk"]
+
+[node name="WindowOptions" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_uypgk")
+script = ExtResource("1_d8xuk")
+aspect_ratios = Array[Resource("res://addons/easyAspectRatio/aspectRatios/AspectRatioModel.gd")]([ExtResource("2_1iyg7"), ExtResource("3_hpq46"), ExtResource("4_vo0vw"), ExtResource("5_n0kb4")])
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Itens" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="AspectRatios" type="VBoxContainer" parent="ScrollContainer/Itens"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/Itens/AspectRatios"]
+layout_mode = 2
+text = "Aspect Ratios:"
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="ScrollContainer/Itens/AspectRatios"]
+layout_mode = 2
+item_count = 9
+selected = 1
+popup/item_0/text = "4:3"
+popup/item_0/id = 0
+popup/item_1/text = "16:9"
+popup/item_1/id = 1
+popup/item_2/text = "16:10"
+popup/item_2/id = 2
+popup/item_3/text = "21:9"
+popup/item_3/id = 3
+popup/item_4/text = "Smartphone"
+popup/item_4/id = 4
+popup/item_4/separator = true
+popup/item_5/text = "9:16"
+popup/item_5/id = 5
+popup/item_6/text = "9:18"
+popup/item_6/id = 6
+popup/item_7/text = "9:19"
+popup/item_7/id = 7
+popup/item_8/text = "19.5:9"
+popup/item_8/id = 8
+
+[node name="addcustom" type="Button" parent="ScrollContainer/Itens/AspectRatios"]
+layout_mode = 2
+text = "Add custom"
+
+[node name="VSeparator" type="VSeparator" parent="ScrollContainer/Itens"]
+layout_mode = 2
+
+[node name="Sizes" type="VBoxContainer" parent="ScrollContainer/Itens"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/Itens/Sizes"]
+layout_mode = 2
+text = "Size:"
+horizontal_alignment = 1
+
+[node name="horizontal" type="TextEdit" parent="ScrollContainer/Itens/Sizes"]
+layout_mode = 2
+placeholder_text = "<- horizontal ->"
+scroll_fit_content_height = true
+
+[node name="vertical" type="TextEdit" parent="ScrollContainer/Itens/Sizes"]
+layout_mode = 2
+placeholder_text = "<- Vertical ->"
+scroll_fit_content_height = true
+
+[node name="VSeparator2" type="VSeparator" parent="ScrollContainer/Itens"]
+layout_mode = 2
+
+[node name="Stretch" type="VBoxContainer" parent="ScrollContainer/Itens"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/Itens/Stretch"]
+layout_mode = 2
+text = "Stretch:"
+horizontal_alignment = 1
+
+[node name="StretchOptions" type="OptionButton" parent="ScrollContainer/Itens/Stretch"]
+layout_mode = 2
+item_count = 3
+selected = 1
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Canvas items"
+popup/item_1/id = 1
+popup/item_2/text = "Viewport (pixel art)"
+popup/item_2/id = 2
+
+[node name="StrecthAspect" type="OptionButton" parent="ScrollContainer/Itens/Stretch"]
+layout_mode = 2
+item_count = 5
+selected = 1
+popup/item_0/text = "Aspect: Ignore"
+popup/item_0/id = 0
+popup/item_1/text = "Aspect: Keep"
+popup/item_1/id = 1
+popup/item_2/text = "Aspect: Keep Width"
+popup/item_2/id = 2
+popup/item_3/text = "Aspect: Keep Height"
+popup/item_3/id = 3
+popup/item_4/text = "Aspect: Expand"
+popup/item_4/id = 4
+
+[node name="ScaleMode" type="OptionButton" parent="ScrollContainer/Itens/Stretch"]
+layout_mode = 2
+item_count = 2
+selected = 0
+popup/item_0/text = "Scale: Fractional"
+popup/item_0/id = 0
+popup/item_1/text = "Scale: Integer"
+popup/item_1/id = 1
+
+[node name="Scale" type="SpinBox" parent="ScrollContainer/Itens/Stretch"]
+layout_mode = 2
+min_value = 0.5
+max_value = 8.0
+step = 0.01
+value = 1.0
+prefix = "Scale:"
+
+[node name="ScaleSlider" type="HSlider" parent="ScrollContainer/Itens/Stretch"]
+layout_mode = 2
+min_value = 0.5
+max_value = 8.0
+step = 0.01
+value = 1.0
+
+[node name="VSeparator3" type="VSeparator" parent="ScrollContainer/Itens"]
+layout_mode = 2
+
+[node name="Options" type="VBoxContainer" parent="ScrollContainer/Itens"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/Itens/Options"]
+layout_mode = 2
+text = "Other Options:"
+horizontal_alignment = 1
+
+[node name="fullscreen" type="CheckButton" parent="ScrollContainer/Itens/Options"]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="Alwaysontop" type="CheckButton" parent="ScrollContainer/Itens/Options"]
+layout_mode = 2
+text = "Always on top"
+
+[node name="Resizable" type="CheckButton" parent="ScrollContainer/Itens/Options"]
+layout_mode = 2
+button_pressed = true
+text = "Resizable"
+
+[node name="VSync" type="OptionButton" parent="ScrollContainer/Itens/Options"]
+layout_mode = 2
+item_count = 4
+selected = 1
+popup/item_0/text = "VSync: Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "VSync: Enabled"
+popup/item_1/id = 1
+popup/item_2/text = "VSync: Adaptive"
+popup/item_2/id = 2
+popup/item_3/text = "VSync: Mailbox"
+popup/item_3/id = 3
+
+[connection signal="item_selected" from="ScrollContainer/Itens/Stretch/StretchOptions" to="." method="_on_stretch_options_item_selected"]
+[connection signal="item_selected" from="ScrollContainer/Itens/Stretch/StrecthAspect" to="." method="_on_strecth_aspect_item_selected"]
+[connection signal="item_selected" from="ScrollContainer/Itens/Stretch/ScaleMode" to="." method="_on_scale_mode_item_selected"]
+[connection signal="value_changed" from="ScrollContainer/Itens/Stretch/Scale" to="." method="_on_scale_value_changed"]
+[connection signal="value_changed" from="ScrollContainer/Itens/Stretch/ScaleSlider" to="." method="_on_scale_slider_value_changed"]
+[connection signal="toggled" from="ScrollContainer/Itens/Options/fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="toggled" from="ScrollContainer/Itens/Options/Alwaysontop" to="." method="_on_alwaysontop_toggled"]
+[connection signal="toggled" from="ScrollContainer/Itens/Options/Resizable" to="." method="_on_resizable_toggled"]
+[connection signal="item_selected" from="ScrollContainer/Itens/Options/VSync" to="." method="_on_v_sync_item_selected"]
